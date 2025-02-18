@@ -64,3 +64,15 @@ Route::resource('photos', PhotoController::class)->only([
 Route::resource('photos', PhotoController::class)->except([
     'create', 'store', 'update', 'destroy'
 ]);
+
+Route::get('/greeting', function () {
+	return view('hello', ['name' => 'Mariska']);
+});
+
+Route::get('/greeting', function () {
+	return view('blog.hello', ['name' => 'Mariska Putri']);
+});
+
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
+
+
